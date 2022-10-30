@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Image Slider</title>
+</head>
+<body>
+    <main class="image-slider">    
+            <figure class="image-slider__image-box">
+                <img src="./images/nature-1.webp" alt="image 1" class="image-slider__img image-slider__img--1">
+                <img src="./images/nature-2.webp" alt="image 2" class="image-slider__img image-slider__img--2">
+                <img src="./images/nature-3.webp" alt="image 3" class="image-slider__img image-slider__img--3">
+                <img src="./images/nature-4.webp" alt="image 4" class="image-slider__img image-slider__img--4">
+                <img src="./images/nature-5.webp" alt="image 5" class="image-slider__img image-slider__img--5">
+            </figure>
+        <button class="image-slider__btn image-slider__left-btn">
+            <i class="fa-sharp fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="image-slider__btn image-slider__right-btn">
+            <i class="fa-sharp fa-solid fa-chevron-right"></i>
+        </button>
+        <div class="image-slider__round-box">
+            <span class="image-slider__round image-slider__round--active"></span>
+            <span class="image-slider__round"></span>
+            <span class="image-slider__round"></span>
+            <span class="image-slider__round"></span>
+            <span class="image-slider__round"></span>
+        </div>
+    </main>
+    <script src="./index.js" asyn></script>
+</body>
+</html>
