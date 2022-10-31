@@ -43,8 +43,10 @@
     gap: 10px;
 }
 .image-slider__round {
+    display: inline-block;
     width: 50px;
-    height: 10px;
+    height: 15px;
+    background: transparent;
     border: 2px solid #fff;
     border-radius: 5px;
     cursor: pointer;
