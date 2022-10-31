@@ -5,8 +5,18 @@ const imageSliderRounds = document.querySelectorAll(".image-slider__round");
 const images = document.querySelectorAll("img");
 
 let imageSlideCounter = 0;
+let intervalId;
 
-const updateImageRounds = (imageSlideCounter) => {
+const removeInterval = () => {
+  console.log("Clearing interval");
+  clearInterval(intervalId);
+};
+const startInterval = () => {
+  console.log("Setting interval");
+  intervalId = setInterval(slideImageToRight, 5000);
+};
+
+const updateImageRounds = () => {
   imageSliderRounds.forEach((round) =>
     round.classList.remove("image-slider__round--active")
   );
@@ -14,7 +24,7 @@ const updateImageRounds = (imageSlideCounter) => {
     "image-slider__round--active"
   );
 };
-const slideImage = (imageSlideCounter) => {
+const slideImage = () => {
   imageSliderBox.style = `transform: translateX(-${
     imageSliderBox.clientWidth * imageSlideCounter
   }px)`;
@@ -24,25 +34,31 @@ const slideImageToLeft = () => {
   if (imageSlideCounter < 0) {
     imageSlideCounter = images.length - 1;
   }
-  updateImageRounds(imageSlideCounter);
-  slideImage(imageSlideCounter);
+  updateImageRounds();
+  slideImage();
+  removeInterval();
+  startInterval();
 };
 const slideImageToRight = () => {
   imageSlideCounter++;
   if (imageSlideCounter > images.length - 1) {
     imageSlideCounter = 0;
   }
-  updateImageRounds(imageSlideCounter);
-  slideImage(imageSlideCounter);
-};
-const updateCounter = (roundIndex) => {
-  imageSlideCounter = roundIndex;
-  updateImageRounds(imageSlideCounter);
-  slideImage(imageSlideCounter);
+  updateImageRounds();
+  slideImage();
+  removeInterval();
+  startInterval();
 };
 
+const updateCounter = (roundIndex) => {
+  imageSlideCounter = roundIndex;
+  updateImageRounds();
+  slideImage();
+  removeInterval();
+  startInterval();
+};
 const initiateAutomaticImageSlide = () => {
-  setInterval(slideImageToRight, 5000);
+  startInterval();
 };
 initiateAutomaticImageSlide();
 
