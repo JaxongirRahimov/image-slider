@@ -8,11 +8,9 @@ let imageSlideCounter = 0;
 let intervalId;
 
 const removeInterval = () => {
-  console.log("Clearing interval");
   clearInterval(intervalId);
 };
 const startInterval = () => {
-  console.log("Setting interval");
   intervalId = setInterval(slideImageToRight, 5000);
 };
 
